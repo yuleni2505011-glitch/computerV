@@ -95,3 +95,39 @@ Una vez que el servidor reporte estar listo, abre tu navegador en:
 * **DeepFace** — Framework de análisis facial inmersivo.
 * **OpenCV** — Localización y procesamiento espacial del rostro.
 * **HTML5 / CSS3 / JavaScript (ES6)** — Frontend premium inmersivo sin dependencias pesadas.
+
+## Instalación y ejecución en Windows
+
+Requisitos: Python 3.12 y conexión a internet para descargar
+las dependencias y el modelo en el primer análisis.
+
+Abre una terminal en la carpeta principal del proyecto.
+
+### Crear el entorno virtual
+
+```powershell
+py -3.12 -m venv .venv
+```
+
+### Instalar las dependencias
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+### Iniciar la aplicación
+
+```powershell
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+Abre http://127.0.0.1:8000 en el navegador.
+Permite el acceso a la cámara o carga una fotografía y pulsa
+“Escanear Rostro”. La primera ejecución puede descargar el modelo.
+
+Mantén la terminal abierta mientras utilizas la aplicación.
+Para detener el servidor, presiona Ctrl + C.
+
+Los resultados son estimaciones de expresiones faciales y
+no confirman el estado emocional real de una persona.
